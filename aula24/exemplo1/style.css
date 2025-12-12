@@ -4,6 +4,7 @@
     flex-direction: row;
     background-color: bisque;
     flex-wrap: wrap;
+    align-items: center;
 }
 .countainer div{
     background-color: white;
