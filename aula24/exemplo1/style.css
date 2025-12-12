@@ -1,0 +1,15 @@
+.countainer{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    background-color: bisque;
+    flex-wrap: wrap;
+}
+.countainer div{
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    font-size:20px;
+    width: 150px;
+    height: 100px;
+}
