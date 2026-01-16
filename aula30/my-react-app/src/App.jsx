@@ -3,8 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Car from './components/car.jsx'
+import Moto from './components/moto.jsx'
+import favoriteColor from './components/moto.jsx'
 
-    
+
+
+
 function App(props) {
 
 
@@ -19,9 +23,26 @@ function App(props) {
         year: 1969
         
         };
-    return (
 
-        <Car carinfo={carInfo}/>
+    const motoInfo = {
+
+        name: "Honda",
+            
+        model: "Cbx 250",
+            
+        color: "white",
+            
+        year: 2008
+            
+        };
+
+    return (
+        <>
+            <Car carinfo={carInfo}/>
+            <Moto motoinfo={motoInfo}/>
+
+        </>
+       
 );
 
 }
