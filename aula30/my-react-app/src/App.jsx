@@ -2,29 +2,40 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link, useParams} from 'react-router-dom'
 import Home from './components/aula33/Home.jsx'
 import Contact from './components/aula33/contact.jsx'
-import About from './components/aula33/About.jsx'
+import BikeProducts from './components/aula33/componentes_ex2/BikeProducts.jsx'
+import Products from './components/aula33/componentes_ex2/Products.jsx'
+import CarProducts from './components/aula33/componentes_ex2/CarProducts.jsx'
+import Info from './components/aula33/componentes_ex2/Info.jsx'
+
 
 
 function App() {
     return(
-        <BrowserRouter>
-        {/* Navegação */}
-        <nav>
-            <Link to="/">Home</Link> |{" "}
-            <Link to="/about">About</Link> |{" "}
-            <Link to="/contact">Contact</Link>
+    <BrowserRouter>
+      {/* Navigation */}
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/products">Products</Link> |{" "}
+        <Link to="/contact">Contact</Link> |{" "}
+        <Link to="/customer/Emil">Emil</Link> |{" "}
+        <Link to="/customer/Tobias">Tobias</Link> | {" "}
+        <Link to="/customer/Linus">Linus</Link> |{" "}
       </nav>
-        {/* Routes  */}
-        <Routes>
-            <Route path='/' element  = {<Home/>}/>
-            <Route path='/About' element  = {<About/>}/>
-            <Route path='/Contact' element  = {<Contact/>}/>
-        </Routes>
 
-        </BrowserRouter>
+      {/* Routes */}
+      <Routes>
+      <Route path="/customer/:firstname" element={<Info />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />}>
+          <Route path="car" element={<CarProducts />} />
+          <Route path="bike" element={<BikeProducts />} />
+        </Route>
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
     );
 }
 export default App
