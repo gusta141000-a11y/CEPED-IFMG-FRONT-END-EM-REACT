@@ -11,18 +11,20 @@ import CarProducts from './components/aula33/componentes_ex2/CarProducts.jsx'
 import Info from './components/aula33/componentes_ex2/Info.jsx'
 
 
-
+ 
 function App() {
+    let x = "/customer/Felipe"
+    let y = "Felipe"
     return(
     <BrowserRouter>
       {/* Navigation */}
       <nav>
         <Link to="/">Home</Link> |{" "}
-        <Link to="/products">Products</Link> |{" "}
-        <Link to="/contact">Contact</Link> |{" "}
+        <Link to="/custumer/products">Products</Link> |{" "}
+        <Link to="/custumer/contact">Contact</Link> |{" "}
         <Link to="/customer/Emil">Emil</Link> |{" "}
         <Link to="/customer/Tobias">Tobias</Link> | {" "}
-        <Link to="/customer/Linus">Linus</Link> |{" "}
+        <Link to = {`/customer/${y}`} > {y}</Link> |{" "}
       </nav>
 
       {/* Routes */}
@@ -30,6 +32,7 @@ function App() {
       <Route path="/customer/:firstname" element={<Info />} />
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />}>
+          
           <Route path="car" element={<CarProducts />} />
           <Route path="bike" element={<BikeProducts />} />
         </Route>
