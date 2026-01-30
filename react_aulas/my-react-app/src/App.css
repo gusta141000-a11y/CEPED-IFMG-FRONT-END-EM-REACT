@@ -41,3 +41,8 @@
   color: #888;
 }
 
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
